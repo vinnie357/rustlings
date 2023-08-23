@@ -181,3 +181,37 @@ if you have ideas or suggestions!
 ## Contributors ✨
 
 Thanks goes to the wonderful people listed in [AUTHORS.md](./AUTHORS.md) 🎉
+
+
+
+## what I ran
+```bash
+# install nix
+
+curl -L https://nixos.org/nix/install | sh
+
+# uninstall nix
+#$ rm -rf /nix
+
+# https://github.com/rust-lang/rustlings/
+# install rustlings
+# find out the latest version at https://github.com/rust-lang/rustlings/releases/latest (on edit 5.5.1)
+git clone -b 5.5.1 --depth 1 https://github.com/rust-lang/rustlings
+cd rustlings
+# if nix version > 2.3
+#https://nixos.wiki/wiki/Flakes#Installing_flakes
+nix develop --experimental-features 'nix-command flakes'
+# if nix version <= 2.3
+#nix-shell
+
+# issues with nix and flake
+mkdir -p ~/.config/nix
+echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+
+
+# do exercises
+rustling watch
+
+then follow and edit the commands
+
+```
